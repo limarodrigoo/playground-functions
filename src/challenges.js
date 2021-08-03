@@ -33,12 +33,12 @@ function highestCount(arr) {
   // seu código aqui
   let highestNum = arr[0];
   let highestNumCont = 0;
-  for (let key in arr) {
-    if (arr[key] >= highestNum) {
-      if(arr[key] !== highestNum){
-        highestNumCont = 0;
-      }
+  for (let key = 0; key < arr.length; key += 1) {
+    if (arr[key] > highestNum) {
+      highestNumCont = 0;
       highestNum = arr[key];
+    }
+    if (arr[key] === highestNum) {
       highestNumCont += 1;
     }
   }
@@ -58,30 +58,33 @@ function catAndMouse(mouse, cat1, cat2) {
 
   if (distance1 < distance2) {
     return 'cat1';
-  } else if (distance2 < distance1) {
+  }
+  if (distance2 < distance1) {
     return 'cat2';
-  }  
-    return 'os gatos trombam e o rato foge';
+  }
+  return 'os gatos trombam e o rato foge';
+}
 
+function isDivisibleFizzBuzz(num) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return ('fizzBuzz');
+  }
+  if (num % 5 === 0) {
+    return ('buzz');
+  }
+  if (num % 3 === 0) {
+    return ('fizz');
+  }
+  return ('bug!');
 }
 
 // Desafio 8
 function fizzBuzz(arr) {
   // seu código aqui
   let newArr = [];
-
   for (let key in arr) {
-    if (arr[key] % 3 === 0 && arr[key] % 5 === 0) {
-      newArr.push('fizzBuzz');
-    } else if (arr[key] % 5 === 0) {
-      newArr.push('buzz');
-    } else if (arr[key] % 3 === 0) {
-      newArr.push('fizz');
-    } else {
-      newArr.push('bug!');
-    }
+    if (arr[key]) newArr.push(isDivisibleFizzBuzz(arr[key]));
   }
-  console.log(newArr);
   return newArr;
 }
 
