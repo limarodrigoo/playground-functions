@@ -45,8 +45,6 @@ function highestCount(arr) {
   return highestNumCont;
 }
 
-highestCount([-2, -2, -1]);
-
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
   // seu código aqui
