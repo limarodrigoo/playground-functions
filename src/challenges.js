@@ -1,10 +1,7 @@
 // Desafio 1
 function compareTrue(a, b) {
-  if (a === true && b === true) {
-    return true;
-  } else {
-    return false;
-  }
+  if (a === true && b === true) return true;
+  return false;
 }
 
 // Desafio 2
@@ -37,12 +34,11 @@ function highestCount(arr) {
   let highestNum = arr[0];
   let highestNumCont = 0;
   for (let key in arr) {
-    if (arr[key] > highestNum) {
+    if (arr[key] >= highestNum) {
+      if(arr[key] !== highestNum){
+        highestNumCont = 0;
+      }
       highestNum = arr[key];
-    }
-  }
-  for (let key2 in arr) {
-    if (arr[key2] === highestNum) {
       highestNumCont += 1;
     }
   }
