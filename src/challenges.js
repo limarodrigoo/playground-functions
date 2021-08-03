@@ -82,8 +82,8 @@ function isDivisibleFizzBuzz(num) {
 function fizzBuzz(arr) {
   // seu código aqui
   let newArr = [];
-  for (let key in arr) {
-    if (arr[key]) newArr.push(isDivisibleFizzBuzz(arr[key]));
+  for (let key = 0; key < arr.length; key += 1) {
+    newArr.push(isDivisibleFizzBuzz(arr[key]));
   }
   return newArr;
 }
