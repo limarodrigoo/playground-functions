@@ -56,9 +56,6 @@ function triangleCheck(lineA, lineB, lineC) {
   triangleValidate = checkingSides(lineC, lineA, lineB);
   return triangleValidate;
 }
-function getSum(total, num) {
-  return total + num;
-}
 // Desafio 13
 function hydrate(str) {
   // seu código aqui
