@@ -42,12 +42,19 @@ function generatePhoneNumber(arr) {
   let newStr = `(${str.substring(0, 2)}) ${str.substring(2, 7)}-${str.substring(7, 11)}`;
   return newStr;
 }
-
-generatePhoneNumber([0, 2, 3, 4, 4, 2, 7, 8, 9, 9, 4]);
+function checkingSides(a, b, c) {
+  if (a > b + c || a < Math.abs(b - c)) return false;
+  return true;
+}
 
 // Desafio 12
-function triangleCheck() {
+function triangleCheck(lineA, lineB, lineC) {
   // seu código aqui
+  let triangleValidate = true;
+  triangleValidate = checkingSides(lineA, lineB, lineC);
+  triangleValidate = checkingSides(lineB, lineA, lineC);
+  triangleValidate = checkingSides(lineC, lineA, lineB);
+  return triangleValidate;
 }
 
 // Desafio 13
