@@ -56,11 +56,25 @@ function triangleCheck(lineA, lineB, lineC) {
   triangleValidate = checkingSides(lineC, lineA, lineB);
   return triangleValidate;
 }
-
-// Desafio 13
-function hydrate() {
-  // seu código aqui
+function getSum(total, num) {
+  return total + num;
 }
+// Desafio 13
+function hydrate(str) {
+  // seu código aqui
+  let filterNums = /[0-9]/g;
+  let numOfDrinks = str.match(filterNums);
+  let waterCups = 0;
+  for (let index = 0; index < numOfDrinks.length; index += 1) {
+    waterCups += Number(numOfDrinks[index]);
+  }
+  if (waterCups > 1) {
+    return `${waterCups} copos de água`;
+  }
+  return `${waterCups} copo de água`;
+}
+
+hydrate('1 cerveja');
 
 module.exports = {
   generatePhoneNumber,
